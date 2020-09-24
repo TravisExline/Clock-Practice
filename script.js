@@ -2,9 +2,11 @@ const HOURHAND = document.querySelector('#hour');
 const MINUTEHAND = document.querySelector('#minute');
 const SECONDHAND = document.querySelector('#second');
 
+const DIGITALTIME = document.querySelector('.digital-holder')
+
 //set it all in a function to ensure repetative running with setInterval  
 function startClock() {
-    //getting current date and setting variables for specific times
+
     var date = new Date();
     let hr = date.getHours()
     let min = date.getMinutes()
@@ -23,5 +25,29 @@ function startClock() {
     MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
     SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
 }
-
 var interval = setInterval(startClock, 1000)
+
+// var digitalDate = new Date();
+// let digitalHr = digitalDate.getHours()
+// let digitalMin = digitalDate.getMinutes()
+// let digitalSec = digitalDate.getSeconds()
+
+// var digitalClock = document.createElement('h1');
+
+// var digitalTime = document.createTextNode(digitalHr + ":" + digitalMin + ":" + digitalSec)
+
+// digitalClock.appendChild(digitalTime)
+
+// DIGITALTIME.appendChild(digitalClock)
+
+function startDigitalClock() {
+
+    var digitalDate = new Date();
+    let digitalHr = digitalDate.getHours()
+    let digitalMin = digitalDate.getMinutes()
+    let digitalSec = digitalDate.getSeconds()
+
+    DIGITALTIME.innerHTML = digitalHr + ":" + digitalMin + ":" + digitalSec
+}
+
+var digitalInterval = setInterval(startDigitalClock, 1000)
