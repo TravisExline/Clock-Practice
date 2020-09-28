@@ -27,19 +27,8 @@ function startClock() {
 }
 var interval = setInterval(startClock, 1000)
 
-// var digitalDate = new Date();
-// let digitalHr = digitalDate.getHours()
-// let digitalMin = digitalDate.getMinutes()
-// let digitalSec = digitalDate.getSeconds()
 
-// var digitalClock = document.createElement('h1');
-
-// var digitalTime = document.createTextNode(digitalHr + ":" + digitalMin + ":" + digitalSec)
-
-// digitalClock.appendChild(digitalTime)
-
-// DIGITALTIME.appendChild(digitalClock)
-
+// to make the digital version, have to start again
 function startDigitalClock() {
 
     var digitalDate = new Date();
@@ -50,4 +39,5 @@ function startDigitalClock() {
     DIGITALTIME.innerHTML = digitalHr + ":" + digitalMin + ":" + digitalSec
 }
 
+//redo interval for digital
 var digitalInterval = setInterval(startDigitalClock, 1000)
