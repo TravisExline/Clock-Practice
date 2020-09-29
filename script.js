@@ -27,14 +27,23 @@ function startClock() {
 }
 var interval = setInterval(startClock, 1000)
 
+// Need to style the digital clock so it's always 2 digits
+function testZero(time) {
+    if (time <= 9) {
+        time = "0" + time
+    }
+    return time
+}
 
 // to make the digital version, have to start again
 function startDigitalClock() {
 
     var digitalDate = new Date();
     let digitalHr = digitalDate.getHours()
-    let digitalMin = digitalDate.getMinutes()
-    let digitalSec = digitalDate.getSeconds()
+    
+    //call the function here with our minutes/seconds as arguments to test
+    let digitalMin = testZero(digitalDate.getMinutes())
+    let digitalSec = testZero(digitalDate.getSeconds())
 
     DIGITALTIME.innerHTML = digitalHr + ":" + digitalMin + ":" + digitalSec
 }
